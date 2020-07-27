@@ -33,6 +33,7 @@
 		form{
 		width: 100%!important;
 		padding: 0!important;
+		margin: 0!important;
 		}
 		._form-content{
 		width: 100%;
@@ -231,7 +232,14 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  
+  <script>
+	var elements = document.getElementsByClassName("_form-label");
+    while(elements.length > 0){
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+  </script>
+  
 </body>
 
 </html>
