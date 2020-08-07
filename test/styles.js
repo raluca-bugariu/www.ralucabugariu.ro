@@ -439,7 +439,7 @@ module.exports = content.locals || {};
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\danbu\Desktop\LabFiles\11 - Simple ClientServer\src\styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! C:\Users\danbu\Desktop\LabFiles\13 - Simple Routing\src\styles.css */"./src/styles.css");
 
 
 /***/ })
