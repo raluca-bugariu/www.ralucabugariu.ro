@@ -74,25 +74,30 @@ function get(name){
 
 function request (factura, tranzactie) {
 
-		var date = new Date().toISOString();
-		var requestJSON = {
-		
-			Data: date,
-			Factura: factura,
-			Tranzactie: tranzactie
-		
-		}
-		
-		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.onreadystatechange = function() {
-		  if (this.readyState == 4 && this.status == 200) {			
-			//JSON.parse(this.responseText);						
-		  }
-		};
-		
-		xmlhttp.open("POST", "https://sheet.best/api/sheets/9f9985ee-3ffc-4f3b-b401-7a802f04a115", true);
-		xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-		xmlhttp.send(JSON.stringify(requestJSON));
+	if (!tranzactie) {
+		return;	
+	}
+
+
+	var date = new Date().toISOString();
+	var requestJSON = {
+	
+		Data: date,
+		Factura: factura,
+		Tranzactie: tranzactie
+	
+	}
+	
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+	  if (this.readyState == 4 && this.status == 200) {			
+		//JSON.parse(this.responseText);						
+	  }
+	};
+	
+	xmlhttp.open("POST", "https://sheet.best/api/sheets/9f9985ee-3ffc-4f3b-b401-7a802f04a115", true);
+	xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	xmlhttp.send(JSON.stringify(requestJSON));
 
 }
 
