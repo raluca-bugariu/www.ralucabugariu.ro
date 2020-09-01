@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Raluca Bugariu - Coach, Consultant, Trainer, Facilitator">
   <meta name="author" content="Raluca Bugariu">
-  <meta http-equiv="refresh" content="7; url=http://ralucabugariu.ro/" />  
+  <meta http-equiv="refresh" content="10; url=http://ralucabugariu.ro/" />  
   
   <meta property="og:image" content="http://ralucabugariu.ro/img/about/raluca.jpg" />
   <meta property="og:type" content="website" />
@@ -37,6 +37,7 @@
 </head>
 
 <body>
+  	
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -60,7 +61,46 @@
     </div>
 
   </section><!-- End Hero -->
+  
+  
+<script>
 
+request (get('factura'), get('transactionId'));
+
+function get(name){
+	if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+	  return decodeURIComponent(name[1]);
+}
+
+function request (factura, tranzactie) {
+
+		var date = new Date().toISOString();
+		var requestJSON = {
+		
+			Data: date,
+			Factura: factura,
+			Tranzactie: tranzactie
+		
+		}
+		
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+		  if (this.readyState == 4 && this.status == 200) {
+			
+			var myObj = JSON.parse(this.responseText);
+			alert(myObj);
+			
+		  }
+		};
+		
+		xmlhttp.open("POST", "https://sheet.best/api/sheets/9f9985ee-3ffc-4f3b-b401-7a802f04a115", true);
+		xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+		xmlhttp.send(JSON.stringify(requestJSON));
+
+}
+
+
+</script>
 
 </body>
 
