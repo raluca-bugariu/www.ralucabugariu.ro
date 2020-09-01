@@ -85,11 +85,8 @@ function request (factura, tranzactie) {
 		
 		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.onreadystatechange = function() {
-		  if (this.readyState == 4 && this.status == 200) {
-			
-			var myObj = JSON.parse(this.responseText);
-			alert(myObj);
-			
+		  if (this.readyState == 4 && this.status == 200) {			
+			//JSON.parse(this.responseText);						
 		  }
 		};
 		
