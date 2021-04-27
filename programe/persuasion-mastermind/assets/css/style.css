@@ -1073,9 +1073,15 @@ section {
   background: #f8f8f8;
   text-align: center;
 }
+.pricing .btn-wrap2 {
+  margin: 0px -0px -0px -0px;
+  padding: 0px 0px;
+  background: #fff;
+  text-align: center;
+}
 
 .pricing .btn-buy {
-  background: #ffb727;
+  background: red;
   display: inline-block;
   padding: 8px 35px;
   border-radius: 4px;
@@ -1088,8 +1094,22 @@ section {
   transition: 0.3s;
 }
 
+.pricing .btn-buy2 {
+  background: red;
+  display: inline-block;
+  padding: 10px 100px;
+  border-radius: 4px;
+  color: #fff;
+  transition: none;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
 .pricing .btn-buy:hover {
-  background: #ffc85a;
+  background: palevioletred;
 }
 
 .pricing .featured h3 {
